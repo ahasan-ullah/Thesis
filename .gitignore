@@ -10,3 +10,27 @@ chat-export-1782241494388.json
 chat-export-1782241472588.json
 Model - Claude.md
 Claude.md
+
+# Local experiment outputs
+BanglaCXR_Ablation/
+BanglaCXR_Local/
+BanglaCXR_Stage2/
+
+# Exported presentation and report copies
+poster.pdf
+poster.pptx
+poster_v3.pptx
+presentation latest.pptx
+poster_figures/
+
+# Generated diagram exports
+diagrams/clinical_metrics_table.txt
+diagrams/*_fixed.png
+diagrams/confusion_matrix_*.png
+diagrams/dataset_example.png
+diagrams/full_architecture.png
+diagrams/methodology diagram.pdf
+diagrams/pipeline_*.png
+diagrams/workflow_diagram.png
+
+Springer_Nature_LaTeX_Template/
