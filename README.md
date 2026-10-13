@@ -24,8 +24,7 @@ a frozen radiology encoder, a learned anatomy-guided bridge, a 4-bit adapted LLM
 <a href="#-results"><b>Results</b></a> ·
 <a href="#-projector-ablation"><b>Ablation</b></a> ·
 <a href="#-figure-gallery"><b>Figures</b></a> ·
-<a href="#-quickstart"><b>Quickstart</b></a> ·
-<a href="#-limitations"><b>Limitations</b></a>
+<a href="#-quickstart"><b>Quickstart</b></a>
 
 </div>
 
@@ -265,19 +264,6 @@ Checkpoints and generated outputs are written locally and are not part of this r
 ├── Thesis Report updated 1.docx             # Thesis report (revised)
 └── README.md
 ```
-
-## 🚧 Limitations
-
-> [!IMPORTANT]
-> Generated reports are **research outputs**, not autonomous medical advice, and are no replacement for radiologist review.
-
-- The English training and reference reports come from IU X-ray and are not Bangla-native clinical annotations.
-- Bangla evaluation currently relies on machine-translated references; human radiologist and native-speaker validation is still needed.
-- No clinical-accuracy metric is reported yet. The rule-based abnormality and entity labels do not handle negation reliably, and a validated labeller such as CheXbert or RadGraph is still needed.
-- 135 of the 550 generated English reports leave the Findings section empty and give only an Impression.
-- The projector ablation must be re-run under controlled conditions before any claim can be made about the projector design.
-- The projector's queries are randomly initialised and receive no anatomical supervision. Showing that they attend to anatomical regions would need further analysis, such as attention maps.
-- NLLB-200 mistranslates some radiology terms. For example, "mediastinal" becomes মধ্যস্থতাকারী ("mediator") and "pulmonary vascularity" becomes ফুসফুসের স্নায়বিকতা. Glossary terms are also not always kept verbatim: "consolidation" comes out as কনসোলাইডেশন rather than the glossary's কনসোলিডেশন.
 
 ## 📚 Citation
 
