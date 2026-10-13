@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-label="Headline results: BLEU-1 0.2884, ROUGE-L 0.3103, METEOR 0.2820, Bangla chrF 35.18">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1022"/>
+      <stop offset="1" stop-color="#120d26"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#818cf8"/></linearGradient>
+    <linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+    <linearGradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#fb7185"/></linearGradient>
+    <style>
+      text { font-family: -apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; }
+      .card { }
+
+      .track { fill: none; stroke: #1e293b; stroke-width: 9; }
+      .arc { fill: none; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 251.33; }
+      .val { font-size: 19px; font-weight: 800; fill: #f8fafc; text-anchor: middle; }
+      .lbl { font-size: 15px; font-weight: 700; fill: #e2e8f0; }
+      .sub { font-size: 11.5px; fill: #94a3b8; }
+      .tag { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; }
+      .shine { animation: shine 6s ease-in-out infinite; }
+      @keyframes rise { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+      @keyframes shine { 0%,100% { opacity: .25 } 50% { opacity: .9 } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="250" rx="20" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="249" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="30" y="34" font-size="12.5" font-weight="700" fill="#94a3b8" letter-spacing="1.4">HEADLINE RESULTS · 550 HELD-OUT IU X-RAY STUDIES</text>
+
+  <!-- Card 1: BLEU -->
+  <g class="card">
+    <rect x="30" y="52" width="270" height="172" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <path class="shine" d="M46 52.75H284" stroke="url(#g1)" stroke-width="2"/>
+    <circle class="track" cx="96" cy="138" r="40"/>
+    <circle class="arc" cx="96" cy="138" r="40" stroke="url(#g1)" stroke-dashoffset="178.85" transform="rotate(-90 96 138)">
+      <animate attributeName="stroke-dashoffset" values="251.33;251.33;178.85" keyTimes="0;0.25;1" dur="2.2s" calcMode="spline" keySplines="0 0 1 1;.2 .7 .2 1" fill="freeze"/>
+    </circle>
+    <text class="val" x="96" y="145">0.288</text>
+    <text class="tag" x="156" y="96" fill="#34d399">STAGE 1 · EN</text>
+    <text class="lbl" x="156" y="122">BLEU-1</text>
+    <text class="sub" x="156" y="148">BLEU-2 0.166</text>
+    <text class="sub" x="156" y="166">BLEU-4 0.070</text>
+  </g>
+
+  <!-- Card 2: ROUGE-L -->
+  <g class="card c2">
+    <rect x="320" y="52" width="270" height="172" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <path class="shine" d="M336 52.75H574" stroke="url(#g2)" stroke-width="2" style="animation-delay:1.5s"/>
+    <circle class="track" cx="386" cy="138" r="40"/>
+    <circle class="arc" cx="386" cy="138" r="40" stroke="url(#g2)" stroke-dashoffset="173.34" transform="rotate(-90 386 138)">
+      <animate attributeName="stroke-dashoffset" values="251.33;251.33;173.34" keyTimes="0;0.3;1" dur="2.3s" calcMode="spline" keySplines="0 0 1 1;.2 .7 .2 1" fill="freeze"/>
+    </circle>
+    <text class="val" x="386" y="145">0.310</text>
+    <text class="tag" x="446" y="96" fill="#a78bfa">STAGE 1 · EN</text>
+    <text class="lbl" x="446" y="122">ROUGE-L</text>
+    <text class="sub" x="446" y="148">ROUGE-1 0.435</text>
+    <text class="sub" x="446" y="166">ROUGE-2 0.160</text>
+  </g>
+
+  <!-- Card 3: METEOR -->
+  <g class="card c3">
+    <rect x="610" y="52" width="270" height="172" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <path class="shine" d="M626 52.75H864" stroke="url(#g3)" stroke-width="2" style="animation-delay:3s"/>
+    <circle class="track" cx="676" cy="138" r="40"/>
+    <circle class="arc" cx="676" cy="138" r="40" stroke="url(#g3)" stroke-dashoffset="180.46" transform="rotate(-90 676 138)">
+      <animate attributeName="stroke-dashoffset" values="251.33;251.33;180.46" keyTimes="0;0.35;1" dur="2.4s" calcMode="spline" keySplines="0 0 1 1;.2 .7 .2 1" fill="freeze"/>
+    </circle>
+    <text class="val" x="676" y="145">0.282</text>
+    <text class="tag" x="736" y="96" fill="#38bdf8">STAGE 1 · EN</text>
+    <text class="lbl" x="736" y="122">METEOR</text>
+    <text class="sub" x="736" y="148">English chrF 41.32</text>
+    <text class="sub" x="736" y="166">(sentence-averaged)</text>
+  </g>
+
+  <!-- Card 4: Bangla chrF -->
+  <g class="card c4">
+    <rect x="900" y="52" width="270" height="172" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <path class="shine" d="M916 52.75H1154" stroke="url(#g4)" stroke-width="2" style="animation-delay:4.5s"/>
+    <circle class="track" cx="966" cy="138" r="40"/>
+    <circle class="arc" cx="966" cy="138" r="40" stroke="url(#g4)" stroke-dashoffset="162.91" transform="rotate(-90 966 138)">
+      <animate attributeName="stroke-dashoffset" values="251.33;251.33;162.91" keyTimes="0;0.4;1" dur="2.5s" calcMode="spline" keySplines="0 0 1 1;.2 .7 .2 1" fill="freeze"/>
+    </circle>
+    <text class="val" x="966" y="145">35.18</text>
+    <text class="tag" x="1026" y="96" fill="#f472b6">STAGE 2 · BN</text>
+    <text class="lbl" x="1026" y="122">Bangla chrF</text>
+    <text class="sub" x="1026" y="148">Bangla BLEU-1 0.263</text>
+    <text class="sub" x="1026" y="166">vs. NLLB-translated</text>
+    <text class="sub" x="1026" y="182">references (0–100)</text>
+  </g>
+</svg>

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="BanglaCXR — chest X-ray report generation in Bangla">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="0.55" stop-color="#0d1530"/>
+      <stop offset="1" stop-color="#160f2e"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-0.3 0;0.3 0;-0.3 0" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="0.85" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#a5f3fc" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="lungFill" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#1e3a5f" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0b1220" stop-opacity="0.1"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.045"/>
+    </pattern>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="48"/></filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="card"><rect width="1200" height="360" rx="22"/></clipPath>
+    <clipPath id="lungs">
+      <path d="M905 92c-38 6-64 52-70 110-5 48 6 92 34 104 22 9 50-2 58-34 6-26 4-80 2-120-1-34-6-62-24-60z"/>
+      <path d="M1015 92c38 6 64 52 70 110 5 48-6 92-34 104-22 9-50-2-58-34-6-26-4-80-2-120 1-34 6-62 24-60z"/>
+    </clipPath>
+    <clipPath id="type"><rect x="70" y="214" width="0" height="34">
+      <animate attributeName="width" values="0;520;520;0;0" keyTimes="0;0.35;0.8;0.95;1" dur="7s" repeatCount="indefinite"/>
+    </rect></clipPath>
+    <style>
+      .orb { transform-box: fill-box; transform-origin: center; }
+      .o1 { animation: drift1 14s ease-in-out infinite; }
+      .o2 { animation: drift2 18s ease-in-out infinite; }
+      .o3 { animation: drift1 22s ease-in-out infinite reverse; }
+      .rib { stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 2.4s ease-out forwards; }
+      .r2 { animation-delay: .15s } .r3 { animation-delay: .3s } .r4 { animation-delay: .45s } .r5 { animation-delay: .6s } .r6 { animation-delay: .75s }
+      .fade { opacity: 0; animation: fade 1.2s ease-out forwards; }
+      .d1 { animation-delay: .2s } .d2 { animation-delay: .6s } .d3 { animation-delay: 1s } .d4 { animation-delay: 1.4s }
+      .caret { animation: blink 1s steps(1) infinite; }
+      .beam { animation: scan 4.5s cubic-bezier(.45,0,.55,1) infinite; }
+      .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.6s ease-in-out infinite; }
+      @keyframes drift1 { 0%,100% { transform: translate(0,0) } 50% { transform: translate(60px,30px) } }
+      @keyframes drift2 { 0%,100% { transform: translate(0,0) } 50% { transform: translate(-70px,-25px) } }
+      @keyframes draw { to { stroke-dashoffset: 0 } }
+      @keyframes fade { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+      @keyframes blink { 50% { opacity: 0 } }
+      @keyframes scan { 0% { transform: translateY(-80px) } 100% { transform: translateY(260px) } }
+      @keyframes pulse { 0%,100% { opacity: .35; transform: scale(1) } 50% { opacity: 1; transform: scale(1.35) } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } .rib { stroke-dashoffset: 0 } .fade { opacity: 1 } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="360" fill="url(#bg)"/>
+    <rect width="1200" height="360" fill="url(#grid)"/>
+    <circle class="orb o1" cx="180" cy="60" r="140" fill="#2563eb" opacity="0.35" filter="url(#blur)"/>
+    <circle class="orb o2" cx="980" cy="300" r="160" fill="#a21caf" opacity="0.30" filter="url(#blur)"/>
+    <circle class="orb o3" cx="640" cy="180" r="120" fill="#0891b2" opacity="0.22" filter="url(#blur)"/>
+
+    <!-- Title block -->
+    <g font-family="-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif">
+      <g class="fade d1">
+        <rect x="70" y="58" width="236" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#67e8f9" stroke-opacity="0.35"/>
+        <circle class="pulse" cx="90" cy="73" r="4.5" fill="#34d399"/>
+        <text x="104" y="78" font-size="13" font-weight="600" fill="#cbd5e1" letter-spacing="1.2">MEDICAL VISION · LANGUAGE</text>
+      </g>
+      <text x="66" y="168" font-size="84" font-weight="800" fill="url(#title)" letter-spacing="-2">BanglaCXR</text>
+      <text x="70" y="204" font-size="21" fill="#cbd5e1">Low-resource chest X-ray report generation for Bangla</text>
+
+      <g clip-path="url(#type)">
+        <text x="70" y="238" font-size="19" font-family="ui-monospace,'Cascadia Code',Consolas,monospace" fill="#67e8f9">❯ X-ray → English report → <tspan font-family="'Noto Sans Bengali','Nirmala UI','Bangla Sangam MN','Vrinda',sans-serif" fill="#f9a8d4">বাংলা রিপোর্ট</tspan></text>
+      </g>
+
+      <g class="fade d4" font-size="13" font-weight="600">
+        <rect x="70" y="272" width="104" height="30" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.5"/>
+        <text x="122" y="292" text-anchor="middle" fill="#7dd3fc">RAD-DINO</text>
+        <rect x="186" y="272" width="168" height="30" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-opacity="0.5"/>
+        <text x="270" y="292" text-anchor="middle" fill="#c4b5fd">Phi-3.5 Mini · QLoRA</text>
+        <rect x="366" y="272" width="104" height="30" rx="8" fill="#1e293b" stroke="#f472b6" stroke-opacity="0.5"/>
+        <text x="418" y="292" text-anchor="middle" fill="#f9a8d4">NLLB-200</text>
+        <rect x="482" y="272" width="136" height="30" rx="8" fill="#1e293b" stroke="#34d399" stroke-opacity="0.5"/>
+        <text x="550" y="292" text-anchor="middle" fill="#6ee7b7">IU X-ray · 550 test</text>
+      </g>
+    </g>
+
+    <!-- Stylised chest radiograph -->
+    <g transform="translate(0,0)">
+      <rect x="800" y="44" width="320" height="276" rx="18" fill="#020617" fill-opacity="0.55" stroke="#334155"/>
+      <g fill="url(#lungFill)" stroke="#7dd3fc" stroke-opacity="0.55" stroke-width="1.6">
+        <path d="M905 92c-38 6-64 52-70 110-5 48 6 92 34 104 22 9 50-2 58-34 6-26 4-80 2-120-1-34-6-62-24-60z"/>
+        <path d="M1015 92c38 6 64 52 70 110 5 48-6 92-34 104-22 9-50-2-58-34-6-26-4-80-2-120 1-34 6-62 24-60z"/>
+      </g>
+      <!-- heart shadow -->
+      <path d="M948 200c-6 40 10 86 40 92 26 4 36-24 30-56-6-30-30-52-50-52-10 0-18 6-20 16z" fill="#93c5fd" fill-opacity="0.12"/>
+      <!-- spine -->
+      <g stroke="#e2e8f0" stroke-opacity="0.5" stroke-width="2" fill="none">
+        <path d="M960 60V306" stroke-dasharray="10 5"/>
+        <path d="M960 70c-30 0-70 4-104 20M960 70c30 0 70 4 104 20" stroke-opacity="0.45"/>
+      </g>
+      <g stroke="#e0f2fe" stroke-opacity="0.45" stroke-width="2" fill="none" stroke-linecap="round">
+        <path class="rib"    d="M958 104c-40-6-90 4-112 34M962 104c40-6 90 4 112 34"/>
+        <path class="rib r2" d="M958 132c-44-6-96 6-118 38M962 132c44-6 96 6 118 38"/>
+        <path class="rib r3" d="M958 160c-46-6-100 8-122 42M962 160c46-6 100 8 122 42"/>
+        <path class="rib r4" d="M958 188c-46-6-100 10-122 46M962 188c46-6 100 10 122 46"/>
+        <path class="rib r5" d="M958 216c-44-6-96 12-116 48M962 216c44-6 96 12 116 48"/>
+        <path class="rib r6" d="M958 244c-40-4-86 12-104 46M962 244c40-4 86 12 104 46"/>
+      </g>
+      <!-- scanning beam clipped to lungs -->
+      <g clip-path="url(#lungs)">
+        <rect class="beam" x="820" y="40" width="290" height="60" fill="url(#scan)"/>
+      </g>
+      <!-- region query markers -->
+      <g fill="#f472b6" filter="url(#glow)">
+        <circle class="pulse" cx="880" cy="160" r="4"/>
+        <circle class="pulse" cx="1046" cy="210" r="4" style="animation-delay:.8s"/>
+        <circle class="pulse" cx="990" cy="250" r="4" style="animation-delay:1.6s"/>
+        <circle class="pulse" cx="900" cy="250" r="4" style="animation-delay:2.1s"/>
+      </g>
+      <text x="1104" y="306" text-anchor="end" font-family="ui-monospace,Consolas,monospace" font-size="11" fill="#64748b">32 region queries</text>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="22" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+</svg>

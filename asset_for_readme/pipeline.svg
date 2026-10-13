@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="270" viewBox="0 0 1200 270" role="img" aria-label="BanglaCXR pipeline: chest X-ray, RAD-DINO, Anatomy-Guided Projector, Phi-3.5 Mini, English report, NLLB-200, Bangla report">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1022"/>
+      <stop offset="1" stop-color="#120d26"/>
+    </linearGradient>
+    <linearGradient id="s1" x1="0" x2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="s2" x1="0" x2="1"><stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#fb7185"/></linearGradient>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#94a3b8"/>
+    </marker>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      text { font-family: -apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; }
+      .mono { font-family: ui-monospace,'Cascadia Code',Consolas,monospace; }
+      .bn { font-family: 'Noto Sans Bengali','Nirmala UI','Bangla Sangam MN','Vrinda',sans-serif; }
+      .t { font-size: 14px; font-weight: 700; fill: #f1f5f9; text-anchor: middle; }
+      .s { font-size: 11.5px; fill: #94a3b8; text-anchor: middle; }
+      .n { font-size: 10.5px; fill: #475569; }
+      .cap { font-size: 11px; text-anchor: middle; }
+      .flow { stroke-dasharray: 5 6; animation: flow 0.9s linear infinite; }
+      .halo { opacity: 0; animation: wave 5.6s ease-in-out infinite; }
+      .h1 { animation-delay: .0s } .h2 { animation-delay: .8s } .h3 { animation-delay: 1.6s } .h4 { animation-delay: 2.4s }
+      .h5 { animation-delay: 3.2s } .h6 { animation-delay: 4.0s } .h7 { animation-delay: 4.8s }
+      .star { transform-box: fill-box; transform-origin: center; animation: bob 2.4s ease-in-out infinite; }
+      .rise { opacity: 0; animation: rise .8s ease-out forwards; }
+      @keyframes flow { to { stroke-dashoffset: -11 } }
+      @keyframes wave { 0%, 30%, 100% { opacity: 0 } 10% { opacity: .9 } }
+      @keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-3px) } }
+      @keyframes rise { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } .rise { opacity: 1 } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="270" rx="20" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="269" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- stage brackets -->
+  <g class="rise" style="animation-delay:.1s">
+    <text x="50" y="38" font-size="12.5" font-weight="700" fill="url(#s1)" letter-spacing="1.4">STAGE 1 · ENGLISH REPORT GENERATION</text>
+    <path d="M50 52H826" stroke="url(#s1)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <text x="860" y="38" font-size="12.5" font-weight="700" fill="url(#s2)" letter-spacing="1.4">STAGE 2 · TRANSLATION</text>
+    <path d="M860 52H1150" stroke="url(#s2)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+  </g>
+
+  <!-- connectors -->
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#ah)">
+    <path class="flow" d="M180 146H210"/>
+    <path class="flow" d="M342 146H372"/>
+    <path class="flow" d="M504 146H534"/>
+    <path class="flow" d="M666 146H696"/>
+    <path class="flow" d="M828 146H858"/>
+    <path class="flow" d="M990 146H1020"/>
+  </g>
+
+  <!-- halos (sequential wave) -->
+  <g filter="url(#glow)">
+    <rect class="halo h1" x="50"   y="96" width="128" height="100" rx="14" fill="#64748b"/>
+    <rect class="halo h2" x="212"  y="96" width="128" height="100" rx="14" fill="#38bdf8"/>
+    <rect class="halo h3" x="374"  y="96" width="128" height="100" rx="14" fill="#a78bfa"/>
+    <rect class="halo h4" x="536"  y="96" width="128" height="100" rx="14" fill="#34d399"/>
+    <rect class="halo h5" x="698"  y="96" width="128" height="100" rx="14" fill="#fbbf24"/>
+    <rect class="halo h6" x="860"  y="96" width="128" height="100" rx="14" fill="#f472b6"/>
+    <rect class="halo h7" x="1022" y="96" width="128" height="100" rx="14" fill="#fb7185"/>
+  </g>
+
+  <!-- nodes -->
+  <g stroke-width="1.5">
+    <g class="rise" style="animation-delay:.15s">
+      <rect x="50" y="96" width="128" height="100" rx="14" fill="#0f172a" stroke="#64748b"/>
+      <text class="n mono" x="62" y="116">01</text>
+      <text class="t" x="114" y="146">Chest X-ray</text>
+      <text class="s" x="114" y="166">input image</text>
+      <text class="cap mono" x="114" y="224" fill="#94a3b8">518 × 518</text>
+    </g>
+    <g class="rise" style="animation-delay:.3s">
+      <rect x="212" y="96" width="128" height="100" rx="14" fill="#0f172a" stroke="#38bdf8"/>
+      <text class="n mono" x="224" y="116">02</text>
+      <text class="t" x="276" y="146">RAD-DINO</text>
+      <text class="s" x="276" y="166">frozen encoder</text>
+      <text class="cap mono" x="276" y="224" fill="#7dd3fc">1,370 patch tokens</text>
+    </g>
+    <g class="rise" style="animation-delay:.45s">
+      <rect x="374" y="96" width="128" height="100" rx="14" fill="#1a1333" stroke="#a78bfa" stroke-width="2"/>
+      <text class="n mono" x="386" y="116">03</text>
+      <text class="t" x="438" y="140">Anatomy-Guided</text>
+      <text class="t" x="438" y="158">Projector</text>
+      <text class="s" x="438" y="178">cross-attention</text>
+      <text class="cap mono" x="438" y="224" fill="#c4b5fd">32 region queries</text>
+      <g class="star">
+        <rect x="390" y="83" width="96" height="22" rx="11" fill="#a78bfa"/>
+        <text x="438" y="98" font-size="11" font-weight="800" fill="#1e1b4b" text-anchor="middle" letter-spacing="1">TRAINABLE</text>
+      </g>
+    </g>
+    <g class="rise" style="animation-delay:.6s">
+      <rect x="536" y="96" width="128" height="100" rx="14" fill="#0f172a" stroke="#34d399"/>
+      <text class="n mono" x="548" y="116">04</text>
+      <text class="t" x="600" y="146">Phi-3.5 Mini</text>
+      <text class="s" x="600" y="166">4-bit QLoRA</text>
+      <text class="cap mono" x="600" y="224" fill="#6ee7b7">LoRA r=32 · α=64</text>
+    </g>
+    <g class="rise" style="animation-delay:.75s">
+      <rect x="698" y="96" width="128" height="100" rx="14" fill="#0f172a" stroke="#fbbf24"/>
+      <text class="n mono" x="710" y="116">05</text>
+      <text class="t" x="762" y="146">English report</text>
+      <text class="s" x="762" y="166">Findings · Impression</text>
+      <text class="cap mono" x="762" y="224" fill="#fcd34d">structured text</text>
+    </g>
+    <g class="rise" style="animation-delay:.9s">
+      <rect x="860" y="96" width="128" height="100" rx="14" fill="#0f172a" stroke="#f472b6"/>
+      <text class="n mono" x="872" y="116">06</text>
+      <text class="t" x="924" y="146">NLLB-200</text>
+      <text class="s" x="924" y="166">distilled 600M</text>
+      <text class="cap mono" x="924" y="224" fill="#f9a8d4">+ medical glossary</text>
+    </g>
+    <g class="rise" style="animation-delay:1.05s">
+      <rect x="1022" y="96" width="128" height="100" rx="14" fill="#0f172a" stroke="#fb7185"/>
+      <text class="n mono" x="1034" y="116">07</text>
+      <text class="t bn" x="1086" y="147">বাংলা রিপোর্ট</text>
+      <text class="s" x="1086" y="168">Bangla report</text>
+      <text class="cap mono" x="1086" y="224" fill="#fda4af">ben_Beng</text>
+    </g>
+  </g>
+</svg>
